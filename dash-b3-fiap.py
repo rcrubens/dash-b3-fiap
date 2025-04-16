@@ -11,7 +11,7 @@ st.set_page_config(
 
 st.header("**PAINEL DE PREÇOS DE FECHAMENTO E DIVIDENDOS DE AÇÕES DA B3**")
 
-ticker = st.text_input('Digite o ticker da ação', 'BBAS3')
+ticker = st.text_input('Digite o ticker da ação','BBAS3') # sem espaço depois da vírgula
 empresa = yf.Ticker(f"{ticker}.SA")
 
 tickerDF = empresa.history(
@@ -20,7 +20,7 @@ tickerDF = empresa.history(
     end = "2025-04-10"
 )
 
-col1, col2,col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns([1, 1, 1])
 with col1:
     st.write(f"**Empresa:**' {empresa.info['longName']}")
 with col2:
